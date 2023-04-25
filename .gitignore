@@ -1,0 +1,29 @@
+# .NET Core Build Output
+bin/
+obj/
+
+# Visual Studio files
+.vs/
+*.user
+*.suo
+*.sln.docstates
+
+# Build artifacts
+[Bb]in/
+[Oo]bj/
+*.cache
+*.dll
+*.exe
+*.log
+*.ncrunch*
+*.nupkg
+*.pdb
+*.vspscc
+*.resharper
+*.suo
+*.user
+*.cache
+
+# NuGet
+*.nuget.props
+*.nuget.targets

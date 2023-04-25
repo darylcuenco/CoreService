@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: core-k8s
+spec:
+  selector:
+    matchLabels:
+      app: core-k8s
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: core-k8s
+    spec:
+      containers:
+        - name: core-k8s
+          image: darylcuenco/core-k8s:1.0.4
+          volumeMounts:
+            - name: my-pfx-cert
+              mountPath: /app/certs
+          env:
+            - name: PORT
+              value: "7011"
+            - name: CERT_PATH
+              value: "certs/my-cert.pfx"
+            - name: CERT_KEY
+              value: "P@$$$$w0rd" #escape $ with $$
+          args:
+            - "--use-https"
+          ports:
+            - containerPort: 7011
+      volumes:
+        - name: my-pfx-cert
+          secret:
+            secretName: my-pfx-cert
