@@ -23,7 +23,6 @@ string path = @"..\..\..\..\certs\my-cert.pfx";
 #else
 string path = configuration.GetValue<string>("CERT_PATH");
 #endif
-Console.WriteLine("base path: " + Path.Combine(AppContext.BaseDirectory, path) + " port: " + port + " cert path: " + path + " cert key: " + key);
 builder.WebHost.UseKestrel(options =>
 {
     //options.ListenAnyIP(port);
