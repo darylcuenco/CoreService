@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: core-k8s
-          image: darylcuenco/core-k8s:1.0.4
+          image: darylcuenco/core-k8s:1.0.5
           volumeMounts:
             - name: my-pfx-cert
               mountPath: /app/certs
